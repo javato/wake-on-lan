@@ -1,9 +1,6 @@
 package org.jroldan.wakeonlan.model;
 
-import javax.xml.crypto.Data;
 import java.net.DatagramPacket;
-import java.net.DatagramSocket;
-import java.net.InetAddress;
 
 public class MagicPacket {
     private DatagramPacket packet;
