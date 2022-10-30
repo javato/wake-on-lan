@@ -21,12 +21,11 @@ public class MagicPacketServiceImpl implements MagicPacketService {
 
     @Override
     public void sendMagicPacket(String ipAddress, String macAddress) {
-
         try {
             DatagramSocket socket = new DatagramSocket();
             socket.setBroadcast(true);
             socket.send(magicPacketBuilder.build(ipAddress, macAddress).getPacket());
-
+            log.info("Magic Packer sent to ipAddress: {}, macAddress: {}", ipAddress, macAddress);
         } catch (Exception e) {
             log.error("Failed to send WoL packet:", e);
         }
